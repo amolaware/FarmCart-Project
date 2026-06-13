@@ -1,72 +1,10 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
 
-// export default function Home() {
-//   return (
-//     <div className="d-flex flex-column min-vh-100">
-//       {/* Hero section */}
-//       <section className="bg-success text-white text-center py-4 w-100">
-//         <div className="container">
-//           <h1 className="fs-2 fw-bold">🌿 Welcome to FarmCart</h1>
-//           <p className="lead mb-3">Buy fresh produce directly from local farmers</p>
-//           <div>
-//             <Link to="/products" className="btn btn-light btn-sm me-2 mb-2">Shop Now</Link>
-//             <Link to="/register" className="btn btn-outline-light btn-sm mb-2">Join as Farmer</Link>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Why FarmCart / Features */}
-//       <section className="container my-4 flex-grow-1">
-//         <h2 className="text-center fs-4 mb-3">Why FarmCart?</h2>
-//         <div className="row g-3">
-//           <div className="col-12 col-md-4">
-//             <div className="card h-100 shadow-sm">
-//               <div className="card-body text-center">
-//                 <h5 className="card-title">Fresh & Local</h5>
-//                 <p className="card-text">Support local farmers and get farm-fresh products delivered to you.</p>
-//               </div>
-//             </div>
-//           </div>
-//           <div className="col-12 col-md-4">
-//             <div className="card h-100 shadow-sm">
-//               <div className="card-body text-center">
-//                 <h5 className="card-title">Easy Shopping</h5>
-//                 <p className="card-text">Browse, add to cart, and order within minutes from any device.</p>
-//               </div>
-//             </div>
-//           </div>
-//           <div className="col-12 col-md-4">
-//             <div className="card h-100 shadow-sm">
-//               <div className="card-body text-center">
-//                 <h5 className="card-title">Empower Farmers</h5>
-//                 <p className="card-text">Farmers can add products, manage inventory, and grow their business.</p>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Call to action */}
-//       <section className="bg-light text-center py-3 w-100">
-//         <h4 className="fs-5">Ready to explore fresh produce?</h4>
-//         <Link to="/products" className="btn btn-success btn-sm mt-2">Browse Products</Link>
-//       </section>
-
-//       {/* Footer */}
-//       <footer className="bg-dark text-white text-center py-3 mt-auto w-100">
-//         <small>&copy; {new Date().getFullYear()} FarmCart. All rights reserved.</small>
-//       </footer>
-//     </div>
-//   );
-// }
-
-
-// src/pages/Home.jsx
-// src/pages/Home.jsx
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
+import TextType from "../components/TextType";
+
+
 
 export default function Home() {
   const { user } = useContext(AuthContext);
@@ -78,7 +16,22 @@ export default function Home() {
       <section className="text-white text-center py-5" style={{ background: 'linear-gradient(135deg, #28a745, #218838)' }}>
         <div className="container">
           <h1 className="display-5 fw-bold mb-3">🌱 Welcome to FarmCart</h1>
-          <p className="lead mb-4">Buy fresh produce directly from farmers & support local agriculture</p>
+          
+          
+          <TextType
+  text={[
+    "Buy fresh produce directly from farmers & support local agriculture",
+    "Support local farmers and eat healthy",
+    "Fresh • Organic • Farm to Table"
+  ]}
+  typingSpeed={70}
+  deletingSpeed={40}
+  pauseDuration={1500}
+  // textColors={["#ffffff", "#e8ffe8", "#ffd700"]}
+  className="lead mb-4 subtitle-text"
+/>
+
+
           <Link to="/browse" className="btn btn-light btn-lg rounded-pill shadow">
             🛒 Start Shopping
           </Link>

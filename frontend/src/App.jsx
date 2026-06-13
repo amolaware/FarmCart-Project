@@ -18,8 +18,35 @@ import TermsOfService from './pages/TermsOfService';
 import ContactUs from './pages/ContactUs';
 
 
+import TextType from './components/TextType';
+
+import ForgotPassword from "./pages/ForgotPassword";
+import VerifyOtp from "./pages/VerifyOtp";
+import ResetPassword from "./pages/ResetPassword";
+
 function App() {
+  
+
+const handleAnimationComplete = () => {
+  console.log('Animation completed!');
+};
   return (
+    <>
+
+
+
+<TextType 
+  text={["Text typing effect", "for your websites", "Happy coding!"]}
+  typingSpeed={75}
+  pauseDuration={1500}
+  showCursor={true}
+  cursorCharacter="|"
+/>    
+
+
+
+
+
     <Router>
       <Navbar />
       <Routes>
@@ -35,8 +62,25 @@ function App() {
   <Route path="/terms" element={<TermsOfService />} />
   <Route path="/contact" element={<ContactUs />} />
 
+
+<Route
+  path="/forgot-password"
+  element={<ForgotPassword />}
+/>
+
+<Route
+  path="/verify-otp"
+  element={<VerifyOtp />}
+/>
+
+<Route
+  path="/reset-password"
+  element={<ResetPassword />}
+/>
       </Routes>
     </Router>
+
+    </>
   );
 }
 
